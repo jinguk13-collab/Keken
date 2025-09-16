@@ -36,34 +36,20 @@ body {
     align-items: center;
 }
 
+
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 50%; /* Batasi lebar logo */
-    max-width: 100%; /* Pastikan tidak melebihi kontainer */
+    width: 50%; /* Lebar awal */
+    max-width: 100%; /* Batas maksimum lebar */
+    max-height: 200px; /* Batas maksimum tinggi */
     height: auto;
     vertical-align: left;
     margin-right: 10px;
     background: url("../rokubar-gambar.png") no-repeat center center;
     background-size: contain;
-    border: 2px solid #f4f400; /* warna berhadapan ikon api */
-}@media (max-width: 600px) {
-    .logo {
-        width: 100%;
-    }
-}
-
-.logo-img {
-    width: 50px; /* Sesuaikan ukuran logo berdasarkan gambar asli */
-    height: 50px;
-    vertical-align: left;
-    margin-right: 10px;
-    /* Styling untuk logo berdasarkan gambar menu */
-    background: url('logo_rokububar.png') no-repeat center center/contain; /* Ganti dengan nama file logo asli */
-    border-radius: 50%;
-    @media (max-width: 600px) 
-    border: 2px solid #ff4500; /* Warna merah berdasarkan ikon api */
+    border: 2px solid #f4f400;
 }
 
 .logo-text {
