@@ -43,9 +43,9 @@ body {
 }
 
 .logo-img {
-    width: 30px; /* Sesuaikan ukuran logo berdasarkan gambar asli */
-    height: 30px;
-    vertical-align: middle;
+    width: 3px; /* Sesuaikan ukuran logo berdasarkan gambar asli */
+    height: 3px;
+    vertical-align: left;
     margin-right: 10px;
     /* Styling untuk logo berdasarkan gambar menu */
     background: url('logo_rokububar.png') no-repeat center center/contain; /* Ganti dengan nama file logo asli */
