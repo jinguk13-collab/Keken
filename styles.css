@@ -40,6 +40,14 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    width: 50%; /* Batasi lebar logo */
+    max-width: 100%; /* Pastikan tidak melebihi kontainer */
+    height: auto;
+    vertical-align: left;
+    margin-right: 10px;
+    background: url("../rokubar-gambar.png") no-repeat center center;
+    background-size: contain;
+    border: 2px solid #f4f400; /* warna berhadapan ikon api */
 }
 
 .logo-img {
