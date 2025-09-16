@@ -296,7 +296,7 @@ small {
     font-size: 1rem;
     opacity: 0.9;
 }
-
+background: url('roti_bakar_membara.jpg') no-repeat center center/cover;
 /* Footer */
 .footer {
     background: #1e3c72;
