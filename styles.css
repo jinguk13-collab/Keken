@@ -43,7 +43,7 @@ body {
 }
 
 .logo-img {
-    width: 0,5px; /* Sesuaikan ukuran logo berdasarkan gambar asli */
+    width: 70%px; /* Sesuaikan ukuran logo berdasarkan gambar asli */
     height: auto;
     vertical-align: left;
     margin-right: 10px;
