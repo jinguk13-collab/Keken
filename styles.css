@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+background: url('roti_bakar_membara.jpg') no-repeat center center/cover;
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
