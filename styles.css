@@ -48,16 +48,21 @@ body {
     background: url("../rokubar-gambar.png") no-repeat center center;
     background-size: contain;
     border: 2px solid #f4f400; /* warna berhadapan ikon api */
+}@media (max-width: 600px) {
+    .logo {
+        width: 100%;
+    }
 }
 
 .logo-img {
-    width: 20%px; /* Sesuaikan ukuran logo berdasarkan gambar asli */
-    height: auto;
+    width: 50px; /* Sesuaikan ukuran logo berdasarkan gambar asli */
+    height: 50px;
     vertical-align: left;
     margin-right: 10px;
     /* Styling untuk logo berdasarkan gambar menu */
     background: url('logo_rokububar.png') no-repeat center center/contain; /* Ganti dengan nama file logo asli */
     border-radius: 50%;
+    @media (max-width: 600px) 
     border: 2px solid #ff4500; /* Warna merah berdasarkan ikon api */
 }
 
