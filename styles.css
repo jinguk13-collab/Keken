@@ -28,14 +28,7 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-.logo-img {
-    width: 50px; /* Dikurangi dari 80px menjadi 50px */
-    height: auto;
-    vertical-align: middle;
-    margin-right: 10px;
-    background: url('logo_rokububar.png') no-repeat center center/contain; /* Pastikan path sesuai */
-    border-radius: 50%;
-    border: 2px solid #ff4500;
+
 }
 .header .container {
     display: flex;
@@ -50,8 +43,8 @@ body {
 }
 
 .logo-img {
-    width: 80px; /* Sesuaikan ukuran logo berdasarkan gambar asli */
-    height: auto;
+    width: 30px; /* Sesuaikan ukuran logo berdasarkan gambar asli */
+    height: 30px;
     vertical-align: middle;
     margin-right: 10px;
     /* Styling untuk logo berdasarkan gambar menu */
