@@ -3,81 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rokububar | Roti Bakar & Gerobak Bar</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Rokubap Café</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <!-- HEADER -->
-  <header class="header" id="home">
-    <nav class="navbar">
-      <div class="logo">
-        <img src="logo.png" alt="Rokububar Logo">
-        <span>Rokububar</span>
-      </div>
-      <ul class="nav-links">
+  <header>
+    <img src="logo.png" alt="Rokubap Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#home">Beranda</a></li>
         <li><a href="#menu">Menu</a></li>
-        <li><a href="#about">Tentang</a></li>
-        <li><a href="#booking">Booking</a></li>
+        <li><a href="#alamat">Alamat</a></li>
+        <li><a href="https://wa.me/62895365083338" target="_blank" class="booking">Booking</a></li>
       </ul>
-      <button class="menu-toggle">☰</button>
     </nav>
-    <div class="hero">
-      <h1>Selamat Datang di <span>Rokububar</span></h1>
-      <p>Nikmati roti bakar dengan sentuhan api yang membara 🔥</p>
-      <a href="#booking" class="btn">Booking Meja</a>
-    </div>
   </header>
 
-  <!-- MENU -->
-  <section id="menu" class="menu-section">
-    <h2>Our Menu</h2>
-    <div class="menu-grid">
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>ROKUBAP</h1>
+      <h2>ROKUBAR KAWAN LAMA</h2>
+      <p>Since 2025</p>
+    </div>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section id="menu">
+    <h2>OUR MENU</h2>
+    <div class="menu-container">
       <div class="menu-card">
-        <h3>Meses Cokelat</h3>
+        <h3>Meses & Selai</h3>
         <ul>
-          <li>Meses + Melon <span>Rp 15.000</span></li>
-          <li>Meses + Nanas <span>Rp 15.000</span></li>
-          <li>Meses + Strawberry <span>Rp 22.000</span></li>
+          <li>Meses + Melon <span>Rp.15.000</span></li>
+          <li>Meses + Nanas <span>Rp.15.000</span></li>
+          <li>Meses + Vanilla <span>Rp.15.000</span></li>
+          <li>Melon + Nanas <span>Rp.13.000</span></li>
+          <li>Melon + Vanilla <span>Rp.15.000</span></li>
+          <li>Vanilla + Strawberry <span>Rp.20.000</span></li>
+          <li>Strawberry + Blueberry <span>Rp.20.000</span></li>
+          <li>Strawberry + Oreo <span>Rp.20.000</span></li>
+          <li>Meses + Kacang <span>Rp.20.000</span></li>
+          <li>Meses + Strawberry <span>Rp.22.000</span></li>
+          <li>Meses + Blueberry <span>Rp.22.000</span></li>
         </ul>
       </div>
-      <div class="menu-card">
-        <h3>Selai</h3>
-        <ul>
-          <li>Melon + Vanilla <span>Rp 15.000</span></li>
-          <li>Vanilla + Strawberry <span>Rp 20.000</span></li>
-        </ul>
-      </div>
+
       <div class="menu-card">
         <h3>Classic</h3>
         <ul>
-          <li>Mentega + Gula <span>Rp 10.000</span></li>
+          <li>Meses + Oreo <span>Rp.22.000</span></li>
+          <li>Mentega + Gula + Butt <span>Rp.10.000</span></li>
+          <li>Strawberry + Matcha <span>Rp.25.000</span></li>
+          <li>Matcha + Blueberry <span>Rp.25.000</span></li>
+          <li>Nutella + Keju <span>Rp.30.000</span></li>
+          <li>Nutella + Strawberry <span>Rp.30.000</span></li>
+          <li>Nutella + Blueberry <span>Rp.30.000</span></li>
+          <li>Nutella + Oreo <span>Rp.30.000</span></li>
+          <li>Nutella + Matcha <span>Rp.30.000</span></li>
+          <li>Nutella + Tiramisu <span>Rp.30.000</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-card">
+        <h3>Special</h3>
+        <ul>
+          <li>Blueberry + Choco Crunchy <span>Rp.25.000</span></li>
+          <li>Nutella + Choco Crunchy <span>Rp.30.000</span></li>
+          <li>Tiramisu + Keju <span>Rp.25.000</span></li>
+          <li>Tiramisu + Oreo <span>Rp.25.000</span></li>
+          <li>Nutella + Kacang <span>Rp.30.000</span></li>
+          <li>Keju + Choco Crunchy <span>Rp.25.000</span></li>
+          <li>Keju + Tiramisu <span>Rp.22.000</span></li>
+          <li>Keju + Matcha <span>Rp.22.000</span></li>
+          <li>Keju + Strawberry <span>Rp.22.000</span></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <h2>Tentang Kami</h2>
-    <p>Rokububar hadir untuk menghadirkan roti bakar terbaik dengan cita rasa otentik. Dengan suasana hangat dan santai, cocok untuk kumpul bareng teman maupun keluarga.</p>
-  </section>
-
-  <!-- BOOKING -->
-  <section id="booking" class="booking">
-    <h2>Booking Meja</h2>
-    <form>
-      <input type="text" placeholder="Nama" required>
-      <input type="number" placeholder="Jumlah Orang" required>
-      <input type="date" required>
-      <button type="submit">Pesan Sekarang</button>
-    </form>
+  <!-- ALAMAT -->
+  <section id="alamat">
+    <h2>Alamat</h2>
+    <p>Jalan Kaliurang Km.5,6</p>
+    <p>WhatsApp: <a href="https://wa.me/62895365083338" target="_blank">+62 895-3650-83338</a></p>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Rokububar | All Rights Reserved</p>
+    <p>© 2025 Rokubap Café. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
