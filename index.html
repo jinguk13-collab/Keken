@@ -1,156 +1,85 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rokububar Kawanan Lama - Roti & Gerobak Bar</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rokububar | Roti Bakar & Gerobak Bar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- ===== HEADER ===== -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <img src="logo-rokubar.png" alt="Rokubar Kawanan Lama">
-            </div>
-            <h1>Rokububar Kawanan Lama</h1>
-            <div class="flame-icon">🔥</div>
-            <p class="subtitle">Kawanan Lama</p>
-            <small>Since 2025</small>
 
-            <nav class="nav">
-                <ul>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#booking">Booking</a></li>
-                    <li><a href="#location">Lokasi</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <!-- HEADER -->
+  <header class="header" id="home">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Rokububar Logo">
+        <span>Rokububar</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#booking">Booking</a></li>
+      </ul>
+      <button class="menu-toggle">☰</button>
+    </nav>
+    <div class="hero">
+      <h1>Selamat Datang di <span>Rokububar</span></h1>
+      <p>Nikmati roti bakar dengan sentuhan api yang membara 🔥</p>
+      <a href="#booking" class="btn">Booking Meja</a>
+    </div>
+  </header>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <h2>Selamat Datang di Rokububar</h2>
-            <p>Nikmati roti lezat dengan sentuhan api yang membara. Pesan sekarang!</p>
-            <a href="#booking" class="cta-btn">Booking Meja</a>
-        </div>
-    </section>
+  <!-- MENU -->
+  <section id="menu" class="menu-section">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <h3>Meses Cokelat</h3>
+        <ul>
+          <li>Meses + Melon <span>Rp 15.000</span></li>
+          <li>Meses + Nanas <span>Rp 15.000</span></li>
+          <li>Meses + Strawberry <span>Rp 22.000</span></li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <h3>Selai</h3>
+        <ul>
+          <li>Melon + Vanilla <span>Rp 15.000</span></li>
+          <li>Vanilla + Strawberry <span>Rp 20.000</span></li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <h3>Classic</h3>
+        <ul>
+          <li>Mentega + Gula <span>Rp 10.000</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <!-- ===== MENU ===== -->
-    <section id="menu" class="menu-section">
-        <div class="container">
-            <h2>Our Menu</h2>
-            <div class="menu-grid">
-                <!-- Meses Cokelat -->
-                <div class="menu-category">
-                    <h3>Meses Cokelat</h3>
-                    <ul>
-                        <li><span>Meses + Melon</span><span>Rp 15.000</span></li>
-                        <li><span>Meses + Nanas</span><span>Rp 15.000</span></li>
-                        <li><span>Meses + Vanilla</span><span>Rp 15.000</span></li>
-                        <li><span>Meses + Kacang</span><span>Rp 20.000</span></li>
-                        <li><span>Meses + Strawberry</span><span>Rp 22.000</span></li>
-                        <li><span>Meses + Blueberry</span><span>Rp 22.000</span></li>
-                        <li><span>Meses + Oreo</span><span>Rp 22.000</span></li>
-                    </ul>
-                </div>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>Tentang Kami</h2>
+    <p>Rokububar hadir untuk menghadirkan roti bakar terbaik dengan cita rasa otentik. Dengan suasana hangat dan santai, cocok untuk kumpul bareng teman maupun keluarga.</p>
+  </section>
 
-                <!-- Selai -->
-                <div class="menu-category">
-                    <h3>Selai</h3>
-                    <ul>
-                        <li><span>Melon + Nanas</span><span>Rp 13.000</span></li>
-                        <li><span>Melon + Vanilla</span><span>Rp 15.000</span></li>
-                        <li><span>Vanilla + Strawberry</span><span>Rp 20.000</span></li>
-                        <li><span>Strawberry + Blueberry</span><span>Rp 20.000</span></li>
-                        <li><span>Strawberry + Oreo</span><span>Rp 20.000</span></li>
-                    </ul>
-                </div>
+  <!-- BOOKING -->
+  <section id="booking" class="booking">
+    <h2>Booking Meja</h2>
+    <form>
+      <input type="text" placeholder="Nama" required>
+      <input type="number" placeholder="Jumlah Orang" required>
+      <input type="date" required>
+      <button type="submit">Pesan Sekarang</button>
+    </form>
+  </section>
 
-                <!-- Classic -->
-                <div class="menu-category">
-                    <h3>Classic</h3>
-                    <ul>
-                        <li><span>Mentega + Gula + Butter</span><span>Rp 10.000</span></li>
-                    </ul>
-                </div>
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Rokububar | All Rights Reserved</p>
+  </footer>
 
-                <!-- Golden Fil -->
-                <div class="menu-category">
-                    <h3>Golden Fil</h3>
-                    <ul>
-                        <li><span>Strawberry + Matcha</span><span>Rp 25.000</span></li>
-                        <li><span>Matcha + Blueberry</span><span>Rp 25.000</span></li>
-                        <li><span>Blueberry + Choco Crunchy</span><span>Rp 25.000</span></li>
-                        <li><span>Tiramisu + Keju</span><span>Rp 25.000</span></li>
-                        <li><span>Tiramisu + Oreo</span><span>Rp 25.000</span></li>
-                    </ul>
-                </div>
-
-                <!-- Keju -->
-                <div class="menu-category">
-                    <h3>Keju</h3>
-                    <ul>
-                        <li><span>Keju + Choco Crunchy</span><span>Rp 25.000</span></li>
-                        <li><span>Keju + Tiramisu</span><span>Rp 22.000</span></li>
-                        <li><span>Keju + Matcha</span><span>Rp 22.000</span></li>
-                        <li><span>Keju + Strawberry</span><span>Rp 22.000</span></li>
-                    </ul>
-                </div>
-
-                <!-- Nutella -->
-                <div class="menu-category">
-                    <h3>Nutella</h3>
-                    <ul>
-                        <li><span>Nutella + Keju</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Choco Crunchy</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Strawberry</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Blueberry</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Kacang</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Tiramisu</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Matcha</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Oreo</span><span>Rp 30.000</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== BOOKING ===== -->
-    <section id="booking" class="booking-section">
-        <div class="container">
-            <h2>Booking Meja</h2>
-            <p>Pesan meja Anda sekarang via WhatsApp atau telepon.</p>
-            <div class="booking-info">
-                <a href="https://wa.me/62895365083338" class="booking-btn" target="_blank">Booking via WhatsApp +62 895-3650-83338</a>
-                <p class="phone-note">Atau hubungi langsung: +62 895-3650-83338</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer id="location" class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo-footer">
-                    <h3>ROKUBUBAR</h3>
-                    <p>Kawanan Lama</p>
-                </div>
-                <div class="location">
-                    <p><strong>Lokasi:</strong> Jalan Kalimurang Km 5,6</p>
-                    <p>Since 2025</p>
-                </div>
-                <div class="social">
-                    <p>Follow us for updates!</p>
-                    <!-- Add social links if available -->
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
