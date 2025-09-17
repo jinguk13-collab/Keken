@@ -12,6 +12,8 @@ body {
   background: url("roti_bakar_membara.jpg") no-repeat center center fixed;
   background-size: cover;
   color: white; /* biar teks kontras sama background */
+}
+body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
