@@ -1,100 +1,141 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rokubap Café</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rokububar Kawanan Lama - Waffle & Dessert Bar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <img src="logo.png" alt="Rokubap Logo" class="logo">
-    <nav>
-      <ul>
-        <li><a href="#home">Beranda</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#alamat">Alamat</a></li>
-        <li><a href="https://wa.me/62895365083338" target="_blank" class="booking">Booking</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1 class="logo-text">ROKUBUBAR</h1>
+                <div class="flame-icon">🔥</div>
+                <p class="subtitle">Kawanan Lama</p>
+                <small>Since 2025</small>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#location">Lokasi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- HERO SECTION -->
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>ROKUBAP</h1>
-      <h2>ROKUBAR KAWAN LAMA</h2>
-      <p>Since 2025</p>
-    </div>
-  </section>
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="flame-overlay"></div>
+        </div>
+        <div class="container">
+            <h2>Selamat Datang di Rokububar</h2>
+            <p>Nikmati waffle lezat dengan sentuhan api yang membara. Pesan sekarang!</p>
+            <a href="#booking" class="cta-btn">Booking Meja</a>
+        </div>
+    </section>
 
-  <!-- MENU SECTION -->
-  <section id="menu">
-    <h2>OUR MENU</h2>
-    <div class="menu-container">
-      <div class="menu-card">
-        <h3>Meses & Selai</h3>
-        <ul>
-          <li>Meses + Melon <span>Rp.15.000</span></li>
-          <li>Meses + Nanas <span>Rp.15.000</span></li>
-          <li>Meses + Vanilla <span>Rp.15.000</span></li>
-          <li>Melon + Nanas <span>Rp.13.000</span></li>
-          <li>Melon + Vanilla <span>Rp.15.000</span></li>
-          <li>Vanilla + Strawberry <span>Rp.20.000</span></li>
-          <li>Strawberry + Blueberry <span>Rp.20.000</span></li>
-          <li>Strawberry + Oreo <span>Rp.20.000</span></li>
-          <li>Meses + Kacang <span>Rp.20.000</span></li>
-          <li>Meses + Strawberry <span>Rp.22.000</span></li>
-          <li>Meses + Blueberry <span>Rp.22.000</span></li>
-        </ul>
-      </div>
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-category">
+                    <h3>Meses Cokelat</h3>
+                    <ul>
+                        <li><span>Meses + Melon</span><span>Rp 15.000</span></li>
+                        <li><span>Meses + Nanas</span><span>Rp 15.000</span></li>
+                        <li><span>Meses + Vanilla</span><span>Rp 15.000</span></li>
+                        <li><span>Meses + Kacang</span><span>Rp 20.000</span></li>
+                        <li><span>Meses + Strawberry</span><span>Rp 22.000</span></li>
+                        <li><span>Meses + Blueberry</span><span>Rp 22.000</span></li>
+                        <li><span>Meses + Oreo</span><span>Rp 22.000</span></li>
+                    </ul>
+                </div>
+                <div class="menu-category">
+                    <h3>Selai</h3>
+                    <ul>
+                        <li><span>Melon + Nanas</span><span>Rp 13.000</span></li>
+                        <li><span>Melon + Vanilla</span><span>Rp 15.000</span></li>
+                        <li><span>Vanilla + Strawberry</span><span>Rp 20.000</span></li>
+                        <li><span>Strawberry + Blueberry</span><span>Rp 20.000</span></li>
+                        <li><span>Strawberry + Oreo</span><span>Rp 20.000</span></li>
+                    </ul>
+                </div>
+                <div class="menu-category">
+                    <h3>Classic</h3>
+                    <ul>
+                        <li><span>Mentega + Gula + Butter</span><span>Rp 10.000</span></li>
+                    </ul>
+                </div>
+                <div class="menu-category">
+                    <h3>Golden Fil</h3>
+                    <ul>
+                        <li><span>Strawberry + Matcha</span><span>Rp 25.000</span></li>
+                        <li><span>Matcha + Blueberry</span><span>Rp 25.000</span></li>
+                        <li><span>Blueberry + Choco Crunchy</span><span>Rp 25.000</span></li>
+                        <li><span>Tiramisu + Keju</span><span>Rp 25.000</span></li>
+                        <li><span>Tiramisu + Oreo</span><span>Rp 25.000</span></li>
+                    </ul>
+                </div>
+                <div class="menu-category">
+                    <h3>Keju</h3>
+                    <ul>
+                        <li><span>Keju + Choco Crunchy</span><span>Rp 25.000</span></li>
+                        <li><span>Keju + Tiramisu</span><span>Rp 22.000</span></li>
+                        <li><span>Keju + Matcha</span><span>Rp 22.000</span></li>
+                        <li><span>Keju + Strawberry</span><span>Rp 22.000</span></li>
+                    </ul>
+                </div>
+                <div class="menu-category">
+                    <h3>Nutella</h3>
+                    <ul>
+                        <li><span>Nutella + Keju</span><span>Rp 30.000</span></li>
+                        <li><span>Nutella + Choco Crunchy</span><span>Rp 30.000</span></li>
+                        <li><span>Nutella + Strawberry</span><span>Rp 30.000</span></li>
+                        <li><span>Nutella + Blueberry</span><span>Rp 30.000</span></li>
+                        <li><span>Nutella + Kacang</span><span>Rp 30.000</span></li>
+                        <li><span>Nutella + Tiramisu</span><span>Rp 30.000</span></li>
+                        <li><span>Nutella + Matcha</span><span>Rp 30.000</span></li>
+                        <li><span>Nutella + Oreo</span><span>Rp 30.000</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="menu-card">
-        <h3>Classic</h3>
-        <ul>
-          <li>Meses + Oreo <span>Rp.22.000</span></li>
-          <li>Mentega + Gula + Butt <span>Rp.10.000</span></li>
-          <li>Strawberry + Matcha <span>Rp.25.000</span></li>
-          <li>Matcha + Blueberry <span>Rp.25.000</span></li>
-          <li>Nutella + Keju <span>Rp.30.000</span></li>
-          <li>Nutella + Strawberry <span>Rp.30.000</span></li>
-          <li>Nutella + Blueberry <span>Rp.30.000</span></li>
-          <li>Nutella + Oreo <span>Rp.30.000</span></li>
-          <li>Nutella + Matcha <span>Rp.30.000</span></li>
-          <li>Nutella + Tiramisu <span>Rp.30.000</span></li>
-        </ul>
-      </div>
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <h2>Booking Meja</h2>
+            <p>Pesan meja Anda sekarang via WhatsApp atau telepon.</p>
+            <div class="booking-info">
+                <a href="https://wa.me/62895365083338" class="booking-btn" target="_blank">Booking via WhatsApp +62 895-3650-83338</a>
+                <p class="phone-note">Atau hubungi langsung: +62 895-3650-83338</p>
+            </div>
+        </div>
+    </section>
 
-      <div class="menu-card">
-        <h3>Special</h3>
-        <ul>
-          <li>Blueberry + Choco Crunchy <span>Rp.25.000</span></li>
-          <li>Nutella + Choco Crunchy <span>Rp.30.000</span></li>
-          <li>Tiramisu + Keju <span>Rp.25.000</span></li>
-          <li>Tiramisu + Oreo <span>Rp.25.000</span></li>
-          <li>Nutella + Kacang <span>Rp.30.000</span></li>
-          <li>Keju + Choco Crunchy <span>Rp.25.000</span></li>
-          <li>Keju + Tiramisu <span>Rp.22.000</span></li>
-          <li>Keju + Matcha <span>Rp.22.000</span></li>
-          <li>Keju + Strawberry <span>Rp.22.000</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <footer id="location" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo-footer">
+                    <h3>ROKUBUBAR</h3>
+                    <p>Kawanan Lama</p>
+                </div>
+                <div class="location">
+                    <p><strong>Lokasi:</strong> Jalan Kalimurang Km 5,6</p>
+                    <p>Since 2025</p>
+                </div>
+                <div class="social">
+                    <p>Follow us for updates!</p>
+                    <!-- Add social links if available -->
+                </div>
+            </div>
+            <div class="flame-footer"></div>
+        </div>
+    </footer>
 
-  <!-- ALAMAT -->
-  <section id="alamat">
-    <h2>Alamat</h2>
-    <p>Jalan Kaliurang Km.5,6</p>
-    <p>WhatsApp: <a href="https://wa.me/62895365083338" target="_blank">+62 895-3650-83338</a></p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Rokubap Café. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
