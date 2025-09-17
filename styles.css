@@ -140,6 +140,11 @@ small {
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
+.hero-section {
+  background-image: url('logo.png');
+  background-size: cover;
+  background-position: center;
+}
 
 .cta-btn {
     display: inline-block;
