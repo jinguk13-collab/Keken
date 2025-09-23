@@ -3,137 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ROKUBUBAR </title>
+  <title>Rokububar Kawanan Lama - Roti Bakar Arang</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-cover bg-center text-white font-[Poppins]" style="background-image: url('roti_bakar_membara.jpg')">
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- HEADER -->
-  <header class="bg-black/70 p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <img src="logo.png" alt="Rokububar Logo" class="w-12 h-12">
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="flex items-center space-x-2">
+        <img src="logo.png" alt="Logo Rokububar" class="w-10 h-10">
         <div>
-          <h1 class="text-2xl font-bold">ROKUBUBAR</h1>
-          <p class="text-sm">Kawanan Lama - Since 2025</p>
+          <h1 class="text-xl font-bold">ROKUBUBAR 🔥</h1>
+          <p class="text-sm text-gray-500">Kawanan Lama</p>
         </div>
       </div>
       <nav>
-        <ul class="flex space-x-6 font-semibold">
-          <li><a href="#menu" class="hover:text-yellow-400">Menu</a></li>
-          <li><a href="#booking" class="hover:text-yellow-400">Booking</a></li>
-          <li><a href="#location" class="hover:text-yellow-400">Lokasi</a></li>
+        <ul class="flex space-x-6 font-medium">
+          <li><a href="#menu" class="hover:text-orange-500">Menu</a></li>
+          <li><a href="#booking" class="hover:text-orange-500">Booking</a></li>
+          <li><a href="#location" class="hover:text-orange-500">Lokasi</a></li>
+          <li><a href="#sosial" class="hover:text-orange-500">Sosial</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="h-[80vh] flex flex-col justify-center items-center text-center bg-black/50">
-    <h2 class="text-5xl font-bold mb-4">Selamat Datang di ROKUBUBAR</h2>
-    <p class="mb-6 text-lg">Nikmati roti bakar lezat dengan sentuhan api yang membara 🔥</p>
-    <a href="#booking" class="bg-yellow-500 hover:bg-yellow-600 px-6 py-3 rounded-lg shadow-lg font-semibold">
-      Booking Meja
-    </a>
+  <!-- Hero -->
+  <section class="relative bg-cover bg-center h-[70vh] flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?auto=format&fit=crop&w=1350&q=80');">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative text-center text-white px-4">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">Selamat Datang di Rokububar</h2>
+      <p class="text-lg mb-6">Nikmati roti bakar lezat dengan sentuhan api arang membara 🔥</p>
+      <a href="#booking" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg">Booking Meja</a>
+    </div>
   </section>
 
-  <!-- MENU -->
-  <section id="menu" class="py-16 bg-black/70">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-10">Our Menu</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <!-- Meses Cokelat -->
-        <div class="bg-white/10 p-6 rounded-lg shadow-lg">
-          <h3 class="text-2xl font-semibold mb-4">Meses Cokelat</h3>
-          <ul class="space-y-2 text-left">
-            <li>Meses + Melon <span class="float-right">Rp 15.000</span></li>
-            <li>Meses + Nanas <span class="float-right">Rp 15.000</span></li>
-            <li>Meses + Vanilla <span class="float-right">Rp 15.000</span></li>
-            <li>Meses + Kacang <span class="float-right">Rp 20.000</span></li>
-            <li>Meses + Strawberry <span class="float-right">Rp 22.000</span></li>
-            <li>Meses + Blueberry <span class="float-right">Rp 22.000</span></li>
-            <li>Meses + Oreo <span class="float-right">Rp 22.000</span></li>
+  <!-- Menu -->
+  <section id="menu" class="py-12 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Our Menu</h2>
+      <div class="flex space-x-6 overflow-x-auto pb-4">
+        <!-- Category -->
+        <div class="bg-white rounded-xl shadow p-6 min-w-[250px]">
+          <h3 class="font-bold text-lg mb-4">Meses Cokelat</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex justify-between"><span>Meses + Melon</span><span>Rp 15.000</span></li>
+            <li class="flex justify-between"><span>Meses + Nanas</span><span>Rp 15.000</span></li>
+            <li class="flex justify-between"><span>Meses + Vanilla</span><span>Rp 15.000</span></li>
+            <li class="flex justify-between"><span>Meses + Kacang</span><span>Rp 20.000</span></li>
+            <li class="flex justify-between"><span>Meses + Strawberry</span><span>Rp 22.000</span></li>
           </ul>
         </div>
-
-        <!-- Selai -->
-        <div class="bg-white/10 p-6 rounded-lg shadow-lg">
-          <h3 class="text-2xl font-semibold mb-4">Selai</h3>
-          <ul class="space-y-2 text-left">
-            <li>Melon + Nanas <span class="float-right">Rp 13.000</span></li>
-            <li>Melon + Vanilla <span class="float-right">Rp 15.000</span></li>
-            <li>Vanilla + Strawberry <span class="float-right">Rp 20.000</span></li>
-            <li>Strawberry + Blueberry <span class="float-right">Rp 20.000</span></li>
-            <li>Strawberry + Oreo <span class="float-right">Rp 20.000</span></li>
+        <!-- Category -->
+        <div class="bg-white rounded-xl shadow p-6 min-w-[250px]">
+          <h3 class="font-bold text-lg mb-4">Classic</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex justify-between"><span>Mentega + Gula + Butter</span><span>Rp 10.000</span></li>
           </ul>
         </div>
-
-        <!-- Golden Fil -->
-        <div class="bg-white/10 p-6 rounded-lg shadow-lg">
-          <h3 class="text-2xl font-semibold mb-4">Golden Fil</h3>
-          <ul class="space-y-2 text-left">
-            <li>Strawberry + Matcha <span class="float-right">Rp 25.000</span></li>
-            <li>Matcha + Blueberry <span class="float-right">Rp 25.000</span></li>
-            <li>Blueberry + Choco Crunchy <span class="float-right">Rp 25.000</span></li>
-            <li>Tiramisu + Keju <span class="float-right">Rp 22.000</span></li>
-            <li>Tiramisu + Oreo <span class="float-right">Rp 22.000</span></li>
-          </ul>
-        </div>
-
-        <!-- Classic -->
-        <div class="bg-white/10 p-6 rounded-lg shadow-lg">
-          <h3 class="text-2xl font-semibold mb-4">Classic</h3>
-          <ul class="space-y-2 text-left">
-            <li>Mentega + Gula + Butter <span class="float-right">Rp 10.000</span></li>
-          </ul>
-        </div>
-
-        <!-- Keju -->
-        <div class="bg-white/10 p-6 rounded-lg shadow-lg">
-          <h3 class="text-2xl font-semibold mb-4">Keju</h3>
-          <ul class="space-y-2 text-left">
-            <li>Keju + Choco Crunchy <span class="float-right">Rp 25.000</span></li>
-            <li>Keju + Tiramisu <span class="float-right">Rp 22.000</span></li>
-            <li>Keju + Matcha <span class="float-right">Rp 22.000</span></li>
-            <li>Keju + Strawberry <span class="float-right">Rp 22.000</span></li>
-          </ul>
-        </div>
-
-        <!-- Nutella -->
-        <div class="bg-white/10 p-6 rounded-lg shadow-lg">
-          <h3 class="text-2xl font-semibold mb-4">Nutella</h3>
-          <ul class="space-y-2 text-left">
-            <li>Nutella + Keju <span class="float-right">Rp 30.000</span></li>
-            <li>Nutella + Choco Crunchy <span class="float-right">Rp 30.000</span></li>
-            <li>Nutella + Strawberry <span class="float-right">Rp 30.000</span></li>
-            <li>Nutella + Blueberry <span class="float-right">Rp 30.000</span></li>
-            <li>Nutella + Kacang <span class="float-right">Rp 30.000</span></li>
-            <li>Nutella + Tiramisu <span class="float-right">Rp 30.000</span></li>
-            <li>Nutella + Matcha <span class="float-right">Rp 30.000</span></li>
-            <li>Nutella + Oreo <span class="float-right">Rp 30.000</span></li>
+        <!-- Category -->
+        <div class="bg-white rounded-xl shadow p-6 min-w-[250px]">
+          <h3 class="font-bold text-lg mb-4">Nutella</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex justify-between"><span>Nutella + Keju</span><span>Rp 30.000</span></li>
+            <li class="flex justify-between"><span>Nutella + Oreo</span><span>Rp 30.000</span></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BOOKING -->
-  <section id="booking" class="py-16 text-center bg-black/80">
-    <h2 class="text-4xl font-bold mb-4">Pesan Roti</h2>
-    <p class="mb-6">Pesan roti Anda sekarang via WhatsApp</p>
-    <a href="https://wa.me/62895365083338" target="_blank"
-       class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold">
-      Booking via WhatsApp
-    </a>
+  <!-- Booking -->
+  <section id="booking" class="py-12 bg-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4">Pesan Roti</h2>
+      <p class="mb-6 text-gray-600">Pesan roti Anda sekarang via WhatsApp.</p>
+      <a href="https://wa.me/62895365083338" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg">Booking via WhatsApp</a>
+    </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer id="location" class="bg-black/90 text-center py-6">
-    <p>Kawanan Lama - Jalan Kaliurang Km 5,6</p>
-    <p>Since 2025</p>
-    <p class="mt-2 text-gray-400 text-sm">© 2025 Rokububar. All rights reserved.</p>
+  <!-- Lokasi -->
+  <section id="location" class="py-12 bg-gray-100">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4">Lokasi Kami</h2>
+      <p class="text-gray-700">Jalan Kaliurang Km 5,6 - Kawanan Lama</p>
+    </div>
+  </section>
+
+  <!-- Sosial Media -->
+  <section id="sosial" class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto text-center">
+      <h3 class="text-2xl font-bold mb-6">Ikuti Kami di Media Sosial</h3>
+      <div class="flex justify-center space-x-6">
+        <!-- Instagram -->
+        <a href="https://instagram.com/rokubar_kawanlama" target="_blank" class="flex items-center space-x-2 hover:text-pink-400 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25-.88a1.13 1.13 0 1 1-2.25 0 1.13 1.13 0 0 1 2.25 0z"/>
+          </svg>
+          <span>@rokubar_kawanlama</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-400 text-center py-6">
+    <p>&copy; 2025 Rokububar Kawanan Lama. All rights reserved.</p>
   </footer>
 
 </body>
