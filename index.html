@@ -1,144 +1,140 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rokububar Kawanan Lama - roti bakar ya pakai arang </title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROKUBUBAR Kawanan Lama</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header class="header">
-    <div class="container">
-        <div class="logo">
-            <div class="logo-img"></div> <!-- Placeholder, ganti dengan <img src="logo_rokububar.png" alt="Rokububar Logo"> jika ada file gambar -->
-            <h1 class="logo-text">ROKUBUBAR</h1>
-            <div class="flame-icon">🔥</div>
-            <p class="subtitle">Kawanan Lama</p>
-            <small>Since 2025</small>
+<body class="bg-cover bg-center text-white font-[Poppins]" style="background-image: url('roti_bakar_membara.jpg')">
+
+  <!-- HEADER -->
+  <header class="bg-black/70 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="logo.png" alt="Rokububar Logo" class="w-12 h-12">
+        <div>
+          <h1 class="text-2xl font-bold">ROKUBUBAR</h1>
+          <p class="text-sm">Kawanan Lama - Since 2025</p>
         </div>
-        <nav class="nav">
-            <ul>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#booking">Booking</a></li>
-                <li><a href="#location">Lokasi</a></li>
-            </ul>
-        </nav>
+      </div>
+      <nav>
+        <ul class="flex space-x-6 font-semibold">
+          <li><a href="#menu" class="hover:text-yellow-400">Menu</a></li>
+          <li><a href="#booking" class="hover:text-yellow-400">Booking</a></li>
+          <li><a href="#location" class="hover:text-yellow-400">Lokasi</a></li>
+        </ul>
+      </nav>
     </div>
-    </header>
+  </header>
 
-    <section class="hero">
-        <div class="hero-bg">
-            <div class="flame-overlay"></div>
+  <!-- HERO -->
+  <section class="h-[80vh] flex flex-col justify-center items-center text-center bg-black/50">
+    <h2 class="text-5xl font-bold mb-4">Selamat Datang di ROKUBUBAR</h2>
+    <p class="mb-6 text-lg">Nikmati roti bakar lezat dengan sentuhan api yang membara 🔥</p>
+    <a href="#booking" class="bg-yellow-500 hover:bg-yellow-600 px-6 py-3 rounded-lg shadow-lg font-semibold">
+      Booking Meja
+    </a>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="py-16 bg-black/70">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-10">Our Menu</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Meses Cokelat -->
+        <div class="bg-white/10 p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold mb-4">Meses Cokelat</h3>
+          <ul class="space-y-2 text-left">
+            <li>Meses + Melon <span class="float-right">Rp 15.000</span></li>
+            <li>Meses + Nanas <span class="float-right">Rp 15.000</span></li>
+            <li>Meses + Vanilla <span class="float-right">Rp 15.000</span></li>
+            <li>Meses + Kacang <span class="float-right">Rp 20.000</span></li>
+            <li>Meses + Strawberry <span class="float-right">Rp 22.000</span></li>
+            <li>Meses + Blueberry <span class="float-right">Rp 22.000</span></li>
+            <li>Meses + Oreo <span class="float-right">Rp 22.000</span></li>
+          </ul>
         </div>
-        <div class="container">
-            <h2>Selamat Datang di Rokububar</h2>
-            <p>Nikmati roti bakar lezat dengan sentuhan api yang membara. Pesan sekarang!</p>
-            <a href="#booking" class="cta-btn">Booking Meja</a>
+
+        <!-- Selai -->
+        <div class="bg-white/10 p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold mb-4">Selai</h3>
+          <ul class="space-y-2 text-left">
+            <li>Melon + Nanas <span class="float-right">Rp 13.000</span></li>
+            <li>Melon + Vanilla <span class="float-right">Rp 15.000</span></li>
+            <li>Vanilla + Strawberry <span class="float-right">Rp 20.000</span></li>
+            <li>Strawberry + Blueberry <span class="float-right">Rp 20.000</span></li>
+            <li>Strawberry + Oreo <span class="float-right">Rp 20.000</span></li>
+          </ul>
         </div>
-    </section>
 
-    <section id="menu" class="menu-section">
-        <div class="container">
-            <h2>Our Menu</h2>
-            <div class="menu-grid">
-                <div class="menu-category">
-                    <h3>Meses Cokelat</h3>
-                    <ul>
-                        <li><span>Meses + Melon</span><span>Rp 15.000</span></li>
-                        <li><span>Meses + Nanas</span><span>Rp 15.000</span></li>
-                        <li><span>Meses + Vanilla</span><span>Rp 15.000</span></li>
-                        <li><span>Meses + Kacang</span><span>Rp 20.000</span></li>
-                        <li><span>Meses + Strawberry</span><span>Rp 22.000</span></li>
-                        <li><span>Meses + Blueberry</span><span>Rp 22.000</span></li>
-                        <li><span>Meses + Oreo</span><span>Rp 22.000</span></li>
-                    </ul>
-                </div>
-                <div class="menu-category">
-                    <h3>Selai</h3>
-                    <ul>
-                        <li><span>Melon + Nanas</span><span>Rp 13.000</span></li>
-                        <li><span>Melon + Vanilla</span><span>Rp 15.000</span></li>
-                        <li><span>Vanilla + Strawberry</span><span>Rp 20.000</span></li>
-                        <li><span>Strawberry + Blueberry</span><span>Rp 20.000</span></li>
-                        <li><span>Strawberry + Oreo</span><span>Rp 20.000</span></li>
-                    </ul>
-                </div>
-                <div class="menu-category">
-                    <h3>Classic</h3>
-                    <ul>
-                        <li><span>Mentega + Gula + Butter</span><span>Rp 10.000</span></li>
-                    </ul>
-                </div>
-                <div class="menu-category">
-                    <h3>Golden Fil</h3>
-                    <ul>
-                        <li><span>Strawberry + Matcha</span><span>Rp 25.000</span></li>
-                        <li><span>Matcha + Blueberry</span><span>Rp 25.000</span></li>
-                        <li><span>Blueberry + Choco Crunchy</span><span>Rp 25.000</span></li>
-                        <li><span>Tiramisu + Keju</span><span>Rp 25.000</span></li>
-                        <li><span>Tiramisu + Oreo</span><span>Rp 25.000</span></li>
-                    </ul>
-                </div>
-                <div class="menu-category">
-                    <h3>Keju</h3>
-                    <ul>
-                        <li><span>Keju + Choco Crunchy</span><span>Rp 25.000</span></li>
-                        <li><span>Keju + Tiramisu</span><span>Rp 22.000</span></li>
-                        <li><span>Keju + Matcha</span><span>Rp 22.000</span></li>
-                        <li><span>Keju + Strawberry</span><span>Rp 22.000</span></li>
-                    </ul>
-                </div>
-                <div class="menu-category">
-                    <h3>Nutella</h3>
-                    <ul>
-                        <li><span>Nutella + Keju</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Choco Crunchy</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Strawberry</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Blueberry</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Kacang</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Tiramisu</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Matcha</span><span>Rp 30.000</span></li>
-                        <li><span>Nutella + Oreo</span><span>Rp 30.000</span></li>
-                    </ul>
-                </div>
-            </div>
+        <!-- Golden Fil -->
+        <div class="bg-white/10 p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold mb-4">Golden Fil</h3>
+          <ul class="space-y-2 text-left">
+            <li>Strawberry + Matcha <span class="float-right">Rp 25.000</span></li>
+            <li>Matcha + Blueberry <span class="float-right">Rp 25.000</span></li>
+            <li>Blueberry + Choco Crunchy <span class="float-right">Rp 25.000</span></li>
+            <li>Tiramisu + Keju <span class="float-right">Rp 25.000</span></li>
+            <li>Tiramisu + Oreo <span class="float-right">Rp 25.000</span></li>
+          </ul>
         </div>
-    </section>
 
-    <section id="booking" class="booking-section">
-        <div class="container">
-            <h2>pesan roti</h2>
-            <p>Pesan roti Anda sekarang via WhatsApp atau telepon.</p>
-            <div class="booking-info">
-                <a href="https://wa.me/62895365083338" class="booking-btn" target="_blank">Booking via WhatsApp +62 895-3650-83338</a>
-                <p class="phone-note">jangan lupa kayang </p>
-            </div>
+        <!-- Classic -->
+        <div class="bg-white/10 p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold mb-4">Classic</h3>
+          <ul class="space-y-2 text-left">
+            <li>Mentega + Gula + Butter <span class="float-right">Rp 10.000</span></li>
+          </ul>
         </div>
-    </section>
 
-    <footer id="location" class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo-footer">
-                    <p>Kawanan Lama</p>
-                </div>
-                <div class="location">
-                    <p><strong>Lokasi:</strong> Jalan Kalimurang Km 5,6</p>
-                    <p>Since 2025</p>
-                </div>
-                <div class="social">
-                    <p>Follow us for updates!(cuk ra ndue media sosial</p>
-                    <!-- Add social links if available -->
-                </div>
-            </div>
-            <div class="flame-footer"></div>
+        <!-- Keju -->
+        <div class="bg-white/10 p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold mb-4">Keju</h3>
+          <ul class="space-y-2 text-left">
+            <li>Keju + Choco Crunchy <span class="float-right">Rp 25.000</span></li>
+            <li>Keju + Tiramisu <span class="float-right">Rp 22.000</span></li>
+            <li>Keju + Matcha <span class="float-right">Rp 22.000</span></li>
+            <li>Keju + Strawberry <span class="float-right">Rp 22.000</span></li>
+          </ul>
         </div>
-    </footer>
 
-    <img src="logo.png" alt="Deskripsi gambar logo" width="500">
-    
+        <!-- Nutella -->
+        <div class="bg-white/10 p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold mb-4">Nutella</h3>
+          <ul class="space-y-2 text-left">
+            <li>Nutella + Keju <span class="float-right">Rp 30.000</span></li>
+            <li>Nutella + Choco Crunchy <span class="float-right">Rp 30.000</span></li>
+            <li>Nutella + Strawberry <span class="float-right">Rp 30.000</span></li>
+            <li>Nutella + Blueberry <span class="float-right">Rp 30.000</span></li>
+            <li>Nutella + Kacang <span class="float-right">Rp 30.000</span></li>
+            <li>Nutella + Tiramisu <span class="float-right">Rp 30.000</span></li>
+            <li>Nutella + Matcha <span class="float-right">Rp 30.000</span></li>
+            <li>Nutella + Oreo <span class="float-right">Rp 30.000</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- BOOKING -->
+  <section id="booking" class="py-16 text-center bg-black/80">
+    <h2 class="text-4xl font-bold mb-4">Pesan Roti</h2>
+    <p class="mb-6">Pesan roti Anda sekarang via WhatsApp</p>
+    <a href="https://wa.me/62895365083338" target="_blank"
+       class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold">
+      Booking via WhatsApp
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="location" class="bg-black/90 text-center py-6">
+    <p>Kawanan Lama - Jalan Kaliurang Km 5,6</p>
+    <p>Since 2025</p>
+    <p class="mt-2 text-gray-400 text-sm">© 2025 Rokububar. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
