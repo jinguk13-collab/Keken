@@ -3,400 +3,1008 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ayam Rempah - Daftar Menu</title>
+  <title>Menu Ayam Serundeng Rumah Daun</title>
   <script src="/_sdk/element_sdk.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       box-sizing: border-box;
     }
     
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
     
-    .main-wrapper {
-      font-family: 'Montserrat', sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     
-    .elegant-title {
-      font-family: 'Cormorant Garamond', serif;
-      letter-spacing: 0.08em; /* Sedikit lebih lebar */
+    .menu-container {
+      font-family: 'Poppins', sans-serif;
+      width: 100%;
+      min-height: 100%;
+      overflow-auto;
     }
     
-    .menu-card {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04); /* Shadow lebih halus */
+    .menu-header {
+      text-align: center;
+      padding: 48px 32px 32px;
     }
     
-    .menu-card:hover {
-      transform: translateY(-4px); /* Efek lift lebih terasa */
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+    .restaurant-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.2;
     }
     
-    .section-divider {
-      height: 1.5px; /* Lebih tebal */
-      background: linear-gradient(to right, transparent, #d4af37, #d4af37, transparent); /* Gradien emas */
-      opacity: 0.8;
+    .tagline {
+      font-size: 18px;
+      font-style: italic;
+      opacity: 0.85;
+      margin-bottom: 8px;
     }
     
-    .price-tag {
-      font-variant-numeric: tabular-nums;
+    .decorative-line {
+      width: 120px;
+      height: 3px;
+      margin: 16px auto;
     }
     
-    /* Styling for the featured card */
-    .featured-card {
+    .menu-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      text-align: center;
       position: relative;
-      overflow: hidden;
+      padding-bottom: 16px;
     }
-    .featured-card::before {
-      content: 'TERBAIK';
+    
+    .section-title::after {
+      content: '';
       position: absolute;
-      top: 10px;
-      right: -25px;
-      background: #d4af37;
-      color: #2c2c2c;
-      padding: 2px 30px;
-      font-size: 0.75rem;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 2px;
+    }
+    
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    
+    .menu-item {
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.2s;
+    }
+    
+    .menu-item:hover {
+      transform: translateY(-4px);
+    }
+    
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    
+    .item-name {
       font-weight: 600;
-      transform: rotate(45deg);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      font-size: 20px;
+    }
+    
+    .item-price {
+      font-weight: 600;
+      font-size: 18px;
+      white-space: nowrap;
+      margin-left: 16px;
+    }
+    
+    .item-description {
+      font-size: 14px;
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+    
+    .menu-footer {
+      text-align: center;
+      padding: 40px 32px;
+      margin-top: 40px;
+    }
+    
+    .footer-icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 16px;
+    }
+    
+    .footer-text {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+    
+    .footer-contact {
+      font-weight: 600;
+      font-size: 16px;
+    }
+    
+    @media print {
+      .menu-container {
+        padding: 0;
+      }
+      
+      .menu-item:hover {
+        transform: none;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .restaurant-name {
+        font-size: 36px;
+      }
+      
+      .section-title {
+        font-size: 28px;
+      }
     }
   </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
  </head>
  <body class="h-full">
-  <div class="main-wrapper w-full h-full overflow-auto" style="background-color: #faf8f5;"><header class="text-center py-16 px-6">
-    <div class="max-w-5xl mx-auto"><svg class="w-24 h-24 mx-auto mb-6" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 7.5L62.75 32.5L90 35L70 55L75 82.5L50 70L25 82.5L30 55L10 35L37.25 32.5L50 7.5Z" fill="#d4af37"/>
-        <path d="M40 50 Q45 40, 60 40 Q75 40, 80 50 L75 60 Q65 65, 60 60 Q55 65, 45 60 L40 50 Z" fill="#2c2c2c" opacity="0.8"/>
-     </svg>
-     <h1 id="restaurant-name" class="elegant-title text-7xl font-bold mb-3" style="color: #2c2c2c;">AYAM REMPAH</h1>
-     <p id="tagline" class="text-lg tracking-widest uppercase font-light" style="color: #8b7355; font-weight: 300;">Cita Rasa Rempah Warisan Nusantara</p>
-     <div class="section-divider mt-10 max-w-sm mx-auto"></div>
+  <div class="menu-container h-full">
+   <header class="menu-header">
+    <h1 class="restaurant-name" id="restaurant-name">Ayam Serundeng Rumah Daun</h1>
+    <p class="tagline" id="tagline">Cita Rasa Nusantara yang Autentik</p>
+    <div class="decorative-line"></div>
+    <div style="font-size: 40px; margin-top: 16px;">
+     🌿
     </div>
-   </header><main class="max-w-6xl mx-auto px-6 pb-20"><section class="mb-14">
-     <div class="text-center mb-10">
-      <div class="inline-flex items-center justify-center mb-4">
-       <h2 class="elegant-title text-4xl font-semibold" style="color: #2c2c2c;">Ayam Satuan</h2>
-      </div>
-      <p class="text-sm italic" style="color: #8b7355;">Semua disajikan dengan taburan serundeng rempah spesial.</p>
-     </div>
-     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="menu-card rounded-xl p-6 text-center shadow-lg" style="background-color: #ffffff; border: 1px solid #f0ebe4;">
-       <h3 class="elegant-title text-lg font-bold mb-2" style="color: #2c2c2c;">Ayam Sayap</h3>
-       <p class="price-tag text-2xl font-bold" style="color: #d4af37;">Rp 8.000</p>
-      </div>
-      <div class="menu-card rounded-xl p-6 text-center shadow-lg" style="background-color: #ffffff; border: 1px solid #f0ebe4;">
-       <h3 class="elegant-title text-lg font-bold mb-2" style="color: #2c2c2c;">Paha Bawah</h3>
-       <p class="price-tag text-2xl font-bold" style="color: #d4af37;">Rp 12.000</p>
-      </div>
-      <div class="menu-card rounded-xl p-6 text-center shadow-lg" style="background-color: #ffffff; border: 1px solid #f0ebe4;">
-       <h3 class="elegant-title text-lg font-bold mb-2" style="color: #2c2c2c;">Paha Atas</h3>
-       <p class="price-tag text-2xl font-bold" style="color: #d4af37;">Rp 12.000</p>
-      </div>
-      <div class="menu-card rounded-xl p-6 text-center shadow-lg" style="background-color: #ffffff; border: 1px solid #f0ebe4;">
-       <h3 class="elegant-title text-lg font-bold mb-2" style="color: #2c2c2c;">Ayam Dada</h3>
-       <p class="price-tag text-2xl font-bold" style="color: #d4af37;">Rp 17.000</p>
-      </div>
-     </div>
-    </section>
-    <div class="section-divider mb-14 max-w-3xl mx-auto"></div><section class="mb-14">
-     <div class="text-center mb-8">
-      <h2 class="elegant-title text-3xl font-semibold mb-2" style="color: #2c2c2c;">Lauk Tambahan</h2>
-      <p class="text-sm" style="color: #8b7355;">Telur, Tahu, Tempe, Sayur, dan Sambal</p>
-     </div>
-     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
-      <div class="menu-card rounded-xl p-4 text-center shadow-md" style="background-color: #ffffff; border: 1px solid #f0ebe4;">
-       <h3 class="text-base font-medium" style="color: #2c2c2c;">Telur Dadar</h3>
-       <p class="price-tag text-lg font-semibold" style="color: #d4af37;">Rp 6.000</p>
-      </div>
-      <div class="menu-card rounded-xl p-4 text-center shadow-md" style="background-color: #ffffff; border: 1px solid #f0ebe4;">
-       <h3 class="text-base font-medium" style="color: #2c2c2c;">Telur Ceplok</h3>
-       <p class="price-tag text-lg font-semibold" style="color: #d4af37;">Rp 6.000</p>
-      </div>
-      <div class="menu-card rounded-xl p-4 text-center shadow-md" style="background-color: #ffffff; border: 1px solid #f0ebe4;">
-       <h3 class="text-base font-medium" style="color: #2c2c2c;">Tahu Goreng</h3>
-       <p class="price-tag text-lg font-semibold" style="color: #d4af37;">Rp 3.000</p>
-      </div>
-      <div class="menu-card rounded-xl p-4 text-center shadow-md" style="background-color: #ffffff; border: 1px solid #f0ebe4;">
-       <h3 class="text-base font-medium" style="color: #2c2c2c;">Tempe Goreng</h3>
-       <p class="price-tag text-lg font-semibold" style="color: #d4af37;">Rp 3.000</p>
-      </div>
-      <div class="menu-card rounded-xl p-4 text-center shadow-md" style="background-color: #ffffff; border: 1px solid #f0ebe4;">
-       <h3 class="text-base font-medium" style="color: #2c2c2c;">Terong Goreng</h3>
-       <p class="price-tag text-lg font-semibold" style="color: #d4af37;">Rp 4.000</p>
-      </div>
-      <div class="menu-card rounded-xl p-4 text-center shadow-md" style="background-color: #ffffff; border: 1px solid #f0ebe4;">
-        <h3 class="text-base font-medium" style="color: #2c2c2c;">Sambal Pilihan</h3>
-        <p class="price-tag text-lg font-semibold" style="color: #d4af37;">Rp 3.000</p>
+   </header>
+   <main class="menu-section">
+    <h2 class="section-title" id="menu-title">Menu Spesial Kami</h2><!-- PAKET SAYAP -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">🍗 Paket Sayap</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Sayap 1</span> <span class="item-price">Rp 14.000</span>
        </div>
-     </div>
-     <div class="grid md:grid-cols-2 gap-8 mt-10 max-w-4xl mx-auto"><div class="space-y-3">
-            <div class="menu-card rounded-xl p-5 flex justify-between items-center shadow-md" style="background-color: #ffffff; border: 1px solid #f0ebe4;">
-                <h3 class="text-lg font-medium" style="color: #2c2c2c;">Nasi Putih</h3>
-                <p class="price-tag text-xl font-semibold" style="color: #d4af37;">Rp 5.000</p>
-            </div>
-        </div>
-        <div class="space-y-3">
-            <div class="menu-card rounded-xl p-5 flex justify-between items-center shadow-md" style="background-color: #ffffff; border: 1px solid #f0ebe4;">
-                <h3 class="text-lg font-medium" style="color: #2c2c2c;">Es Teh Manis</h3>
-                <p class="price-tag text-xl font-semibold" style="color: #d4af37;">Rp 4.000</p>
-            </div>
-            <div class="menu-card rounded-xl p-5 flex justify-between items-center shadow-md" style="background-color: #ffffff; border: 1px solid #f0ebe4;">
-                <h3 class="text-lg font-medium" style="color: #2c2c2c;">Es Kopi</h3>
-                <p class="price-tag text-xl font-semibold" style="color: #d4af37;">Rp 5.000</p>
-            </div>
-        </div>
-     </div>
-    </section>
-    <div class="section-divider mb-14 max-w-3xl mx-auto"></div><section class="mb-14">
-     <div class="text-center mb-10">
-      <div class="inline-flex items-center justify-center mb-4">
-       <h2 class="elegant-title text-4xl font-semibold" style="color: #2c2c2c;">Pilihan Paket Komplit</h2>
+       <p class="item-description">Nasi + Ayam Serundeng + Sambel + Es Teh</p>
       </div>
-      <p class="text-sm" style="color: #8b7355;">Harga paket menyesuaikan pilihan potongan ayam.</p>
-     </div>
-     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto"><div class="menu-card rounded-3xl p-8 text-center shadow-xl" style="background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%); border: 2px solid #f0ebe4;">
-       <div class="mb-4">
-        <svg class="w-16 h-16 mx-auto" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="30" fill="#faf8f5" stroke="#8b7355" stroke-width="2" /> <text x="32" y="40" text-anchor="middle" font-size="28" fill="#8b7355" font-weight="600">
-          1
-         </text>
-        </svg>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Sayap 2</span> <span class="item-price">Rp 15.000</span>
        </div>
-       <h3 class="elegant-title text-2xl font-semibold mb-3" style="color: #2c2c2c;">Paket Standar</h3>
-       <div class="text-sm space-y-2 mb-6 text-left inline-block" style="color: #5a5a5a;">
-        <p>✓ Nasi</p>
-        <p>✓ Ayam (pilihan)</p>
-        <p>✓ Sambal</p>
-        <p>✓ Es Teh</p>
+       <p class="item-description">Nasi + Ayam Serundeng + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Sayap 3</span> <span class="item-price">Rp 17.000</span>
        </div>
-       <div class="pt-4" style="border-top: 1px solid #f0ebe4;">
-        <p class="text-sm mb-1" style="color: #8b7355;">Mulai Dari</p>
-        <p class="price-tag text-3xl font-bold" style="color: #2c2c2c;">Rp 16.000</p>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Sayap 4</span> <span class="item-price">Rp 18.000</span>
        </div>
-      </div><div class="menu-card featured-card rounded-3xl p-8 text-center shadow-2xl" style="background: linear-gradient(135deg, #d4af37 0%, #a88435 100%); border: 2px solid #fff; transform: scale(1.05); box-shadow: 0 16px 40px rgba(212, 175, 55, 0.4);">
-       <div class="mb-4">
-        <svg class="w-16 h-16 mx-auto" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="30" fill="#ffffff" /> <text x="32" y="40" text-anchor="middle" font-size="28" fill="#d4af37" font-weight="bold">
-          2
-         </text>
-        </svg>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Sayap Komplit</span> <span class="item-price">Rp 22.000</span>
        </div>
-       <h3 class="elegant-title text-3xl font-semibold mb-3" style="color: #ffffff;">PAKET KOMPLIT</h3>
-       <div class="text-base space-y-2 mb-6 text-left inline-block" style="color: #2c2c2c;">
-        <p>✓ Nasi</p>
-        <p>✓ Ayam (pilihan)</p>
-        <p>✓ Sambal</p>
-        <p>✓ Es Teh</p>
-        <p>**+ Telur**</p>
-        <p>**+ Tahu/Tempe**</p>
-       </div>
-       <div class="pt-4" style="border-top: 1px solid rgba(255, 255, 255, 0.4);">
-        <p class="text-sm mb-1" style="color: #ffffff;">Mulai Dari</p>
-        <p class="price-tag text-4xl font-extrabold" style="color: #2c2c2c;">Rp 22.000</p>
-       </div>
-      </div><div class="menu-card rounded-3xl p-8 text-center shadow-xl" style="background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%); border: 2px solid #f0ebe4;">
-       <div class="mb-4">
-        <svg class="w-16 h-16 mx-auto" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="30" fill="#faf8f5" stroke="#8b7355" stroke-width="2" /> <text x="32" y="40" text-anchor="middle" font-size="28" fill="#8b7355" font-weight="600">
-          3
-         </text>
-        </svg>
-       </div>
-       <h3 class="elegant-title text-2xl font-semibold mb-3" style="color: #2c2c2c;">Paket Super Komplit</h3>
-       <div class="text-sm space-y-2 mb-6 text-left inline-block" style="color: #5a5a5a;">
-        <p>✓ Nasi</p>
-        <p>✓ Ayam (pilihan)</p>
-        <p>✓ Sambal</p>
-        <p>✓ Es Teh</p>
-        <p>✓ Telur, Tahu/Tempe</p>
-        <p>**+ Terong & Kobis Goreng**</p>
-       </div>
-       <div class="pt-4" style="border-top: 1px solid #f0ebe4;">
-        <p class="text-sm mb-1" style="color: #8b7355;">Mulai Dari</p>
-        <p class="price-tag text-3xl font-bold" style="color: #2c2c2c;">Rp 26.000</p>
-       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Terong + Kubis + Es Teh</p>
       </div>
      </div>
-    </section><footer class="text-center py-12 px-6 mt-12" style="background-color: #2c2c2c;">
-        <div class="max-w-3xl mx-auto">
-         <div class="section-divider mb-8 opacity-30"></div>
-         <p id="footer-address" class="text-base mb-3" style="color: #d4af37;">Cek GoFood/GrabFood/ShopeeFood di Area Anda</p>
-         <p id="footer-hours" class="text-sm mb-2" style="color: #a89278;">Buka Setiap Hari: 10:00 - 22:00</p>
-         <p id="footer-contact" class="text-sm mb-6" style="color: #a89278;">(021) 1234 5678</p>
-         <p class="text-xs tracking-wider" style="color: #8b7355;">© 2024 AYAM REMPAH. ALL RIGHTS RESERVED.</p>
-        </div>
-    </footer>
+    </div><!-- PAKET PAHA BAWAH -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">🍗 Paket Paha Bawah</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Bawah 1</span> <span class="item-price">Rp 16.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Bawah 2</span> <span class="item-price">Rp 18.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Bawah 3</span> <span class="item-price">Rp 20.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Bawah 4</span> <span class="item-price">Rp 21.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Bawah Komplit</span> <span class="item-price">Rp 25.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Terong + Kubis + Es Teh</p>
+      </div>
+     </div>
+    </div><!-- PAKET DADA -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">🍗 Paket Dada</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Dada 1</span> <span class="item-price">Rp 21.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Dada 2</span> <span class="item-price">Rp 22.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Dada 3</span> <span class="item-price">Rp 24.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Dada 4</span> <span class="item-price">Rp 25.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Dada Komplit</span> <span class="item-price">Rp 29.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Terong + Kubis + Es Teh</p>
+      </div>
+     </div>
+    </div><!-- PAKET PAHA ATAS -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">🍗 Paket Paha Atas</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Atas 1</span> <span class="item-price">Rp 21.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Atas 2</span> <span class="item-price">Rp 22.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Atas 3</span> <span class="item-price">Rp 24.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Atas 4</span> <span class="item-price">Rp 25.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Atas Komplit</span> <span class="item-price">Rp 29.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Terong + Kubis + Es Teh</p>
+      </div>
+     </div>
+    </div><!-- PAKET NASI TELOR -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">🍳 Paket Nasi + Telor</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Nasi Telor 1</span> <span class="item-price">Rp 11.000</span>
+       </div>
+       <p class="item-description">Nasi + Telor + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Nasi Telor 2</span> <span class="item-price">Rp 13.000</span>
+       </div>
+       <p class="item-description">Nasi + Telor + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Nasi Telor Komplit</span> <span class="item-price">Rp 16.000</span>
+       </div>
+       <p class="item-description">Nasi + Telor + Tempe/Tahu + Sambel + Terong + Kubis + Es Teh</p>
+      </div>
+     </div>
+    </div><!-- PAKET NASI TEMPE/TAHU -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">🥘 Paket Nasi + Tempe/Tahu</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Nasi Tempe/Tahu 1</span> <span class="item-price">Rp 9.000</span>
+       </div>
+       <p class="item-description">Nasi + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Nasi Tempe/Tahu Komplit</span> <span class="item-price">Rp 13.000</span>
+       </div>
+       <p class="item-description">Nasi + Tempe/Tahu + Sambel + Terong + Kubis + Es Teh</p>
+      </div>
+     </div>
+    </div><!-- MENU A LA CARTE -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">📋 Menu A La Carte</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Ayam Sayap</span> <span class="item-price">Rp 6.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paha Atas</span> <span class="item-price">Rp 13.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Dada</span> <span class="item-price">Rp 13.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paha Bawah</span> <span class="item-price">Rp 9.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Telur Dadar</span> <span class="item-price">Rp 4.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Telur Ceplok</span> <span class="item-price">Rp 4.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Telur Orak-Arik</span> <span class="item-price">Rp 4.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Tahu Goreng</span> <span class="item-price">Rp 2.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Tempe Goreng</span> <span class="item-price">Rp 2.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Terong Goreng</span> <span class="item-price">Rp 3.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Kobis Goreng</span> <span class="item-price">Rp 2.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Sambal Goreng</span> <span class="item-price">Rp 2.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Sambal Bawang</span> <span class="item-price">Rp 2.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Sambal Serundeng</span> <span class="item-price">Rp 2.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Nasi +</span> <span class="item-price">Rp 3.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Es Teh</span> <span class="item-price">Rp 3.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Es Kopi</span> <span class="item-price">Rp 5.000</span>
+       </div>
+      </div>
+     </div>
+    </div>
    </main>
+   <footer class="menu-footer">
+    <svg class="footer-icon" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /> <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /> <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <p class="footer-text" id="footer-address">Jl. Raya Bogor No. 123, Jakarta Timur</p>
+    <p class="footer-contact" id="footer-contact">📞 0812-3456-7890 | 🕐 Buka Setiap Hari 10:00 - 22:00</p>
+   </footer>
   </div>
   <script>
     const defaultConfig = {
-      restaurant_name: "AYAM REMPAH",
-      tagline: "Cita Rasa Rempah Warisan Nusantara",
-      footer_address: "Cek GoFood/GrabFood/ShopeeFood di Area Anda",
-      footer_hours: "Buka Setiap Hari: 10:00 - 22:00",
-      footer_contact: "(021) 1234 5678",
-      background_color: "#faf8f5",
-      card_color: "#ffffff",
-      text_color: "#2c2c2c",
-      accent_color: "#d4af37",
-      secondary_color: "#8b7355",
-      font_family: "Montserrat",
-      font_size: 16
+      background_color: '#f8f5f0',
+      surface_color: '#ffffff',
+      text_color: '#2c3e2f',
+      primary_color: '#6b8e4e',
+      accent_color: '#d4a574',
+      font_family: 'Poppins',
+      font_size: 16,
+      restaurant_name: 'Ayam Serundeng Rumah Daun',
+      tagline: 'Cita Rasa Nusantara yang Autentik',
+      menu_title: 'Menu Spesial Kami',
+      footer_address: 'Karangturi No. 146',
+      footer_contact: '📞 0858 6925 8318 | 🕐 Buka Setiap Hari 10:00 - 23:00'
     };
 
-    async function onConfigChange(config) {
-      const restaurantName = config.restaurant_name || defaultConfig.restaurant_name;
-      const tagline = config.tagline || defaultConfig.tagline;
-      const footerAddress = config.footer_address || defaultConfig.footer_address;
-      const footerHours = config.footer_hours || defaultConfig.footer_hours;
-      const footerContact = config.footer_contact || defaultConfig.footer_contact;
-      const backgroundColor = config.background_color || defaultConfig.background_color;
-      const cardColor = config.card_color || defaultConfig.card_color;
+    <!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Ayam Serundeng Rumah Daun</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    .menu-container {
+      font-family: 'Poppins', sans-serif;
+      width: 100%;
+      min-height: 100%;
+      overflow-auto;
+    }
+    
+    .menu-header {
+      text-align: center;
+      padding: 48px 32px 32px;
+    }
+    
+    .restaurant-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    
+    .tagline {
+      font-size: 18px;
+      font-style: italic;
+      opacity: 0.85;
+      margin-bottom: 8px;
+    }
+    
+    .decorative-line {
+      width: 120px;
+      height: 3px;
+      margin: 16px auto;
+    }
+    
+    .menu-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      text-align: center;
+      position: relative;
+      padding-bottom: 16px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 2px;
+    }
+    
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    
+    .menu-item {
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.2s;
+    }
+    
+    .menu-item:hover {
+      transform: translateY(-4px);
+    }
+    
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    
+    .item-name {
+      font-weight: 600;
+      font-size: 20px;
+    }
+    
+    .item-price {
+      font-weight: 600;
+      font-size: 18px;
+      white-space: nowrap;
+      margin-left: 16px;
+    }
+    
+    .item-description {
+      font-size: 14px;
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+    
+    .menu-footer {
+      text-align: center;
+      padding: 40px 32px;
+      margin-top: 40px;
+    }
+    
+    .footer-icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 16px;
+    }
+    
+    .footer-text {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+    
+    .footer-contact {
+      font-weight: 600;
+      font-size: 16px;
+    }
+    
+    @media print {
+      .menu-container {
+        padding: 0;
+      }
+      
+      .menu-item:hover {
+        transform: none;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .restaurant-name {
+        font-size: 36px;
+      }
+      
+      .section-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div class="menu-container h-full">
+   <header class="menu-header">
+    <h1 class="restaurant-name" id="restaurant-name">Ayam Serundeng Rumah Daun</h1>
+    <p class="tagline" id="tagline">Cita Rasa Nusantara yang Autentik</p>
+    <div class="decorative-line"></div>
+    <div style="font-size: 40px; margin-top: 16px;">
+     🌿
+    </div>
+   </header>
+   <main class="menu-section">
+    <h2 class="section-title" id="menu-title">Menu Spesial Kami</h2><!-- PAKET SAYAP -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">🍗 Paket Sayap</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Sayap 1</span> <span class="item-price">Rp 14.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Sayap 2</span> <span class="item-price">Rp 15.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Sayap 3</span> <span class="item-price">Rp 17.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Sayap 4</span> <span class="item-price">Rp 18.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Sayap Komplit</span> <span class="item-price">Rp 22.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Terong + Kubis + Es Teh</p>
+      </div>
+     </div>
+    </div><!-- PAKET PAHA BAWAH -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">🍗 Paket Paha Bawah</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Bawah 1</span> <span class="item-price">Rp 16.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Bawah 2</span> <span class="item-price">Rp 18.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Bawah 3</span> <span class="item-price">Rp 20.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Bawah 4</span> <span class="item-price">Rp 21.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Bawah Komplit</span> <span class="item-price">Rp 25.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Terong + Kubis + Es Teh</p>
+      </div>
+     </div>
+    </div><!-- PAKET DADA -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">🍗 Paket Dada</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Dada 1</span> <span class="item-price">Rp 21.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Dada 2</span> <span class="item-price">Rp 22.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Dada 3</span> <span class="item-price">Rp 24.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Dada 4</span> <span class="item-price">Rp 25.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Dada Komplit</span> <span class="item-price">Rp 29.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Terong + Kubis + Es Teh</p>
+      </div>
+     </div>
+    </div><!-- PAKET PAHA ATAS -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">🍗 Paket Paha Atas</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Atas 1</span> <span class="item-price">Rp 21.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Atas 2</span> <span class="item-price">Rp 22.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Atas 3</span> <span class="item-price">Rp 24.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Atas 4</span> <span class="item-price">Rp 25.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paket Paha Atas Komplit</span> <span class="item-price">Rp 29.000</span>
+       </div>
+       <p class="item-description">Nasi + Ayam Serundeng + Telor + Tempe/Tahu + Sambel + Terong + Kubis + Es Teh</p>
+      </div>
+     </div>
+    </div><!-- PAKET NASI TELOR -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">🍳 Paket Nasi + Telor</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Nasi Telor 1</span> <span class="item-price">Rp 11.000</span>
+       </div>
+       <p class="item-description">Nasi + Telor + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Nasi Telor 2</span> <span class="item-price">Rp 13.000</span>
+       </div>
+       <p class="item-description">Nasi + Telor + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Nasi Telor Komplit</span> <span class="item-price">Rp 16.000</span>
+       </div>
+       <p class="item-description">Nasi + Telor + Tempe/Tahu + Sambel + Terong + Kubis + Es Teh</p>
+      </div>
+     </div>
+    </div><!-- PAKET NASI TEMPE/TAHU -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">🥘 Paket Nasi + Tempe/Tahu</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Nasi Tempe/Tahu 1</span> <span class="item-price">Rp 9.000</span>
+       </div>
+       <p class="item-description">Nasi + Tempe/Tahu + Sambel + Es Teh</p>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Nasi Tempe/Tahu Komplit</span> <span class="item-price">Rp 13.000</span>
+       </div>
+       <p class="item-description">Nasi + Tempe/Tahu + Sambel + Terong + Kubis + Es Teh</p>
+      </div>
+     </div>
+    </div><!-- MENU A LA CARTE -->
+    <div style="margin-bottom: 40px;">
+     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; padding-left: 8px; border-left: 4px solid #6b8e4e;">📋 Menu A La Carte</h3>
+     <div class="menu-grid">
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Ayam Sayap</span> <span class="item-price">Rp 6.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paha Atas</span> <span class="item-price">Rp 13.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Dada</span> <span class="item-price">Rp 13.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Paha Bawah</span> <span class="item-price">Rp 9.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Telur Dadar</span> <span class="item-price">Rp 4.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Telur Ceplok</span> <span class="item-price">Rp 4.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Telur Orak-Arik</span> <span class="item-price">Rp 4.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Tahu Goreng</span> <span class="item-price">Rp 2.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Tempe Goreng</span> <span class="item-price">Rp 2.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Terong Goreng</span> <span class="item-price">Rp 3.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Kobis Goreng</span> <span class="item-price">Rp 2.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Sambal Goreng</span> <span class="item-price">Rp 2.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Sambal Bawang</span> <span class="item-price">Rp 2.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Sambal Serundeng</span> <span class="item-price">Rp 2.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Nasi +</span> <span class="item-price">Rp 3.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Es Teh</span> <span class="item-price">Rp 3.000</span>
+       </div>
+      </div>
+      <div class="menu-item">
+       <div class="item-header"><span class="item-name">Es Kopi</span> <span class="item-price">Rp 5.000</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </main>
+   <footer class="menu-footer">
+    <svg class="footer-icon" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /> <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /> <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <p class="footer-text" id="footer-address">Jl. Raya Bogor No. 123, Jakarta Timur</p>
+    <p class="footer-contact" id="footer-contact">📞 0812-3456-7890 | 🕐 Buka Setiap Hari 10:00 - 22:00</p>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      background_color: '#f8f5f0',
+      surface_color: '#ffffff',
+      text_color: '#2c3e2f',
+      primary_color: '#6b8e4e',
+      accent_color: '#d4a574',
+      font_family: 'Poppins',
+      font_size: 16,
+      restaurant_name: 'Ayam Serundeng Rumah Daun',
+      tagline: 'Cita Rasa Nusantara yang Autentik',
+      menu_title: 'Menu Spesial Kami',
+      footer_address: 'Karangturi No. 146',
+      footer_contact: '📞 0858 6925 8318 | 🕐 Buka Setiap Hari 10:00 - 23:00'
+    };
+
+    function applyStyles(config) {
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
       const textColor = config.text_color || defaultConfig.text_color;
+      const primaryColor = config.primary_color || defaultConfig.primary_color;
       const accentColor = config.accent_color || defaultConfig.accent_color;
-      const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
       const fontFamily = config.font_family || defaultConfig.font_family;
       const fontSize = config.font_size || defaultConfig.font_size;
 
-      // Update text content
-      document.getElementById('restaurant-name').textContent = restaurantName;
-      document.getElementById('tagline').textContent = tagline;
-      document.getElementById('footer-address').textContent = footerAddress;
-      document.getElementById('footer-hours').textContent = footerHours;
-      document.getElementById('footer-contact').textContent = footerContact;
-
-      // Update colors
-      document.querySelector('.main-wrapper').style.backgroundColor = backgroundColor;
+      document.querySelector('.menu-container').style.backgroundColor = bgColor;
+      document.querySelector('.menu-container').style.color = textColor;
       
-      document.getElementById('restaurant-name').style.color = textColor;
-      const sectionTitles = document.querySelectorAll('.elegant-title');
-      sectionTitles.forEach(title => {
-        if (title.id !== 'restaurant-name') {
-          title.style.color = textColor;
-        }
-      });
-
-      document.getElementById('tagline').style.color = secondaryColor;
+      document.querySelector('.menu-header').style.backgroundColor = primaryColor;
+      document.querySelector('.menu-header').style.color = surfaceColor;
       
-      const menuCards = document.querySelectorAll('.menu-card');
-      menuCards.forEach(card => {
-        // Skip featured and gradient cards
-        if (!card.style.background.includes('gradient') && !card.classList.contains('featured-card')) {
-          card.style.backgroundColor = cardColor;
-        }
+      document.querySelector('.decorative-line').style.backgroundColor = accentColor;
+      
+      document.querySelector('.section-title').style.color = primaryColor;
+      document.querySelector('.section-title::after', true);
+      const style = document.createElement('style');
+      style.textContent = `.section-title::after { background-color: ${accentColor}; }`;
+      document.head.appendChild(style);
+      
+      const menuItems = document.querySelectorAll('.menu-item');
+      menuItems.forEach(item => {
+        item.style.backgroundColor = surfaceColor;
+        item.style.border = `1px solid ${primaryColor}30`;
       });
-
-      const itemNames = document.querySelectorAll('.menu-card h3');
+      
+      const itemNames = document.querySelectorAll('.item-name');
       itemNames.forEach(name => {
-        if (!name.classList.contains('elegant-title')) {
-          name.style.color = textColor;
-        }
+        name.style.color = primaryColor;
       });
-
-      const prices = document.querySelectorAll('.price-tag');
-      prices.forEach(price => {
-        // Only update prices that match the default accent color or have no specific color
-        if (!price.style.color || price.style.color === 'rgb(212, 175, 55)' || price.style.color === '#d4af37') {
-          price.style.color = accentColor;
-        }
-      });
-
-      // Update fonts
-      document.getElementById('restaurant-name').style.fontFamily = `'Cormorant Garamond', serif`; // Keep for elegance
-      document.getElementById('tagline').style.fontFamily = `${fontFamily}, Montserrat, sans-serif`;
       
-      document.getElementById('restaurant-name').style.fontSize = `${fontSize * 4.5}px`;
-      document.getElementById('tagline').style.fontSize = `${fontSize * 1.125}px`;
+      const itemPrices = document.querySelectorAll('.item-price');
+      itemPrices.forEach(price => {
+        price.style.color = accentColor;
+      });
+      
+      document.querySelector('.menu-footer').style.backgroundColor = primaryColor;
+      document.querySelector('.menu-footer').style.color = surfaceColor;
+      document.querySelector('.footer-icon').style.color = accentColor;
+
+      const baseFontStack = 'sans-serif';
+      document.querySelector('.menu-container').style.fontFamily = `${fontFamily}, ${baseFontStack}`;
+      
+      document.querySelector('.restaurant-name').style.fontSize = `${fontSize * 3}px`;
+      document.querySelector('.tagline').style.fontSize = `${fontSize * 1.125}px`;
+      document.querySelector('.section-title').style.fontSize = `${fontSize * 2}px`;
+      document.querySelector('.item-name').style.fontSize = `${fontSize * 1.25}px`;
+      document.querySelector('.item-price').style.fontSize = `${fontSize * 1.125}px`;
+      document.querySelector('.item-description').style.fontSize = `${fontSize * 0.875}px`;
+      document.querySelector('.footer-text').style.fontSize = `${fontSize * 0.9375}px`;
+      document.querySelector('.footer-contact').style.fontSize = `${fontSize}px`;
+
+      document.getElementById('restaurant-name').textContent = config.restaurant_name || defaultConfig.restaurant_name;
+      document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+      document.getElementById('menu-title').textContent = config.menu_title || defaultConfig.menu_title;
+      document.getElementById('footer-address').textContent = config.footer_address || defaultConfig.footer_address;
+      document.getElementById('footer-contact').textContent = config.footer_contact || defaultConfig.footer_contact;
     }
 
-    function mapToCapabilities(config) {
-      return {
-        recolorables: [
-          {
-            get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => {
-              if (window.elementSdk) {
-                window.elementSdk.config.background_color = value;
-                window.elementSdk.setConfig({ background_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.card_color || defaultConfig.card_color,
-            set: (value) => {
-              if (window.elementSdk) {
-                window.elementSdk.config.card_color = value;
-                window.elementSdk.setConfig({ card_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.text_color || defaultConfig.text_color,
-            set: (value) => {
-              if (window.elementSdk) {
-                window.elementSdk.config.text_color = value;
-                window.elementSdk.setConfig({ text_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.accent_color || defaultConfig.accent_color,
-            set: (value) => {
-              if (window.elementSdk) {
-                window.elementSdk.config.accent_color = value;
-                window.elementSdk.setConfig({ accent_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.secondary_color || defaultConfig.secondary_color,
-            set: (value) => {
-              if (window.elementSdk) {
-                window.elementSdk.config.secondary_color = value;
-                window.elementSdk.setConfig({ secondary_color: value });
-              }
-            }
-          }
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => config.font_family || defaultConfig.font_family,
-          set: (value) => {
-            if (window.elementSdk) {
-              window.elementSdk.config.font_family = value;
-              window.elementSdk.setConfig({ font_family: value });
-            }
-          }
-        },
-        fontSizeable: {
-          get: () => config.font_size || defaultConfig.font_size,
-          set: (value) => {
-            if (window.elementSdk) {
-              window.elementSdk.config.font_size = value;
-              window.elementSdk.setConfig({ font_size: value });
-            }
-          }
-        }
-      };
-    }
-
-    function mapToEditPanelValues(config) {
-      return new Map([
-        ["restaurant_name", config.restaurant_name || defaultConfig.restaurant_name],
-        ["tagline", config.tagline || defaultConfig.tagline],
-        ["footer_address", config.footer_address || defaultConfig.footer_address],
-        ["footer_hours", config.footer_hours || defaultConfig.footer_hours],
-        ["footer_contact", config.footer_contact || defaultConfig.footer_contact]
-      ]);
+    async function onConfigChange(config) {
+      applyStyles(config);
     }
 
     if (window.elementSdk) {
       window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
+        defaultConfig: defaultConfig,
+        onConfigChange: onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => {
+                config.primary_color = value;
+                window.elementSdk.setConfig({ primary_color: value });
+              }
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                config.accent_color = value;
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['restaurant_name', config.restaurant_name || defaultConfig.restaurant_name],
+          ['tagline', config.tagline || defaultConfig.tagline],
+          ['menu_title', config.menu_title || defaultConfig.menu_title],
+          ['footer_address', config.footer_address || defaultConfig.footer_address],
+          ['footer_contact', config.footer_contact || defaultConfig.footer_contact]
+        ])
       });
+
+      applyStyles(window.elementSdk.config);
+    } else {
+      applyStyles(defaultConfig);
     }
   </script>
- </body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b03b1b8d08dd210',t:'MTc2NjExMzY5NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
